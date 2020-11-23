@@ -14,7 +14,7 @@ while True:
     try:
         keyboard.press_and_release('f15')
         delay = 300 # 5 minutes
-        time.sleep(300)  # Sleep for the amount of seconds generated
+        time.sleep(delay)  # Sleep for the amount of seconds generated
     except KeyboardInterrupt:
         # quit
         sys.exit()
