@@ -26,7 +26,9 @@ def main(duration, frequency, verbose, log):
 
     # time.sleep() is in seconds. Multiple minutes wanted by 60 seconds to get delay
     delay = frequency * 60 
-    print("Keeping computer awake :)")
+    thumb = "\U0001F44D"
+    computer = "\U0001F5A5\U0000FE0F"
+    print(f"Keeping {computer} awake {thumb}")
     if verbose:
         print(f'Pressing {keypress} every {delay} seconds')
 
