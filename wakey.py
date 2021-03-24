@@ -1,8 +1,11 @@
 import keyboard, time, sys
 import os, logging
 import ctypes
+from datetime import datetime 
 
 def main(duration, frequency, verbose, log):
+
+    starttime = time.perf_counter()
 
     if log:
         # Setup logging
@@ -28,7 +31,7 @@ def main(duration, frequency, verbose, log):
     delay = frequency * 60 
     thumb = "\U0001F44D"
     computer = "\U0001F5A5\U0000FE0F"
-    print(f"Keeping {computer} awake {thumb}")
+    print(f"Keeping {computer}  awake {thumb}")
     if verbose:
         print(f'Pressing {keypress} every {delay} seconds')
 
@@ -46,6 +49,11 @@ def main(duration, frequency, verbose, log):
                 keyboard.press_and_release(keypress)
 
             time.sleep(delay)  # Sleep for the amount of seconds generated
+            if duration: 
+                scriptduration = time.perf_counter() - starttime
+                if scriptduration > duration:
+                    print("Time duration reached. Ending Wakey.")
+                    sys.exit()
         except KeyboardInterrupt:
             # quit
             sys.exit()
