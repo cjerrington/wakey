@@ -32,6 +32,7 @@ Wakey has a few arguments you can use to adjust the settings.
 
 Command | Explanation
 --------|------------
+-d, --duration | Used to set the duration to run Wakey
 -f, --frequency | Used for the frequency of the keypress in minutes. Default is 1 minute.
 -v, --verbose | To see the output of the keypress in the console. Default is false.
 -l, --log | Create a log of the application to see when the events happened. Default is false
@@ -52,6 +53,12 @@ python wakey.py -f 2 -v -l
 
 The log file will be created in the same directory as Wakey.
 
+```shell
+python wakey.py -d 5
+```
+
+Duration is in minutes.
+
 ## Building
 
 You can compile Wakey to an executable (tested on Windows 10).
@@ -61,7 +68,7 @@ There is the built in ```build.bat``` file which uses ```pyinstaller```
 pyinstaller --onefile --icon=sun.ico --version-file=version.txt wakey.py
 ```
 
-This step has already been done for you and you can find the compiled version here.
+This step has already been done for you and you can find the latest compiled version [here](https://github.com/cjerrington/wakey/releases/latest). Currently only supporting Windows for the pre-compiled versions.
 
 ## Todo
 
@@ -71,7 +78,7 @@ Things I'd like to add to Wakey
 - [X] Add support for changing the frequency
 - [X] Add support Linux
 - [ ] Mouse support instead of keyboard
-- [ ] Add duration for the script to run, example for 5 minutes, and hour. Currently Wakey runs until the program quits.
+- [X] Add duration for the script to run, example for 5 minutes, and hour. Currently Wakey runs until the program quits.
 
 ## Images
 
